@@ -1,0 +1,15 @@
+# Ignore raw sequencing data and databases
+*.sra
+*.fastq
+*.fastq.gz
+*.bt2
+kraken_database/
+GRCh38_noalt_as/
+
+# Ignore large media files (since they shouldn't go to the code repo)
+*.jpg
+*.pptx
+*.pdf
+
+# Ignore OS files
+.DS_Store
