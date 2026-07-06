@@ -1,4 +1,4 @@
-# Genome Explorers: Colorectal Cancer Prediction via Microbiome Analysis
+# Colorectal Cancer Prediction via Microbiome Analysis
 *(A BCD Analytics Hub Workshop Project)*
 
 ## 🟦 Project Overview
