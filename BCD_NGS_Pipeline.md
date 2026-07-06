@@ -56,7 +56,6 @@ merged.head()
 Next, I needed to actually acquire the biological data for analysis. The NCBI Sequence Read Archive (SRA) hosts petabytes of genomic data. Instead of trying to download these files manually through a web browser, which is slow and prone to corruption, I used the SRA Toolkit's `prefetch` command directly in my macOS terminal. This specialized command securely and efficiently downloads the highly compressed raw sequencing data straight from the NCBI databases into a dedicated folder on my Mac, ensuring the data integrity remains completely intact.
 
 ```bash
-%%bash
 # Create a directory to store the raw data
 mkdir -p sra_data/ERR14218891
 
@@ -76,7 +75,6 @@ prefetch --output-directory sra_data/ERR14218891 ERR14218891
 The raw `.sra` file I just downloaded is a highly compressed, proprietary binary format that downstream bioinformatics tools simply cannot read. I needed to unpack it into standard FASTQ format, which stores both the DNA sequences and their quality scores. I used the `fastq-dump` command for this. Crucially, I made sure to include the `--split-files` flag. This was paired-end sequencing data, meaning the DNA was read from both the left side and the right side for accuracy. `--split-files` forces the tool to separate the forward reads and reverse reads into two distinct files, which is mandatory for the spatial alignment steps later. I also added `--gzip` to automatically compress the output so my Mac's hard drive wouldn't fill up instantly.
 
 ```bash
-%%bash
 echo "Converting to FASTQ..."
 # The --split-files flag separates Read 1 (Forward) and Read 2 (Reverse)
 # The --gzip flag compresses the output to save massive amounts of storage
@@ -94,7 +92,6 @@ fastq-dump --split-files --gzip sra_data/ERR14218891/ERR14218891.sra --outdir sr
 Sequencing machines are physical hardware, and they make physical errors—especially toward the ends of the DNA reads where their chemical enzymes degrade. I absolutely could not allow garbage data or machine errors to trick my Machine Learning model later on into thinking it had found a mutation. To ensure pristine data integrity, I used a high-speed computational tool called `fastp`. I explicitly configured it to scan every single DNA base and drop anything that had a Phred quality score below 20 (which mathematically represents less than 99% accuracy). `fastp` sliced away all the low-confidence bases and generated beautifully trimmed output files, along with an HTML report to visually verify the improvements.
 
 ```bash
-%%bash
 mkdir -p fastp_output
 
 echo "Executing fastp Quality Filtering..."
@@ -121,7 +118,6 @@ fastp \
 These were stool samples, which naturally contain a massive amount of shed human intestinal cells from the patient. My goal was to study bacteria, so the human DNA acting as 'contamination' needed to be completely removed before proceeding. I used `bowtie2`, a powerful sequence aligner, to map all my freshly trimmed reads against the entire human reference genome. The strategic genius of this step was utilizing the `--un-conc-gz` flag. Instead of saving the reads that successfully mapped to the human genome, this flag told the algorithm to throw those away and ONLY save the read pairs that FAILED to map. By strictly capturing the failures, I successfully isolated the pure microbial DNA.
 
 ```bash
-%%bash
 mkdir -p bowtie2_output
 
 echo "Running Bowtie2 Alignment..."
@@ -148,7 +144,6 @@ bowtie2 \
 Now that I possessed pure microbial DNA, I needed to identify exactly what bacterial species were present in the sample and in what quantities. I deployed `Kraken2`, which is an incredibly fast taxonomic classifier. Instead of using a generic database, I deliberately pointed it to the highly specific MGnify human-gut database to maximize clinical accuracy. Kraken2 chopped my reads into smaller mathematical substrings (called 'k-mers') and matched them against known bacterial genomes, generating a final report of what species were present. Because my Mac had sufficient storage and RAM, I was able to download the multi-gigabyte database and process this intensive classification completely locally. *(Note: For systems lacking space, downloading pre-computed cloud profiles from Zenodo is a common alternative, but I processed Kraken2 natively as my main method).* This step finally gave me the biological features needed for my Machine Learning model.
 
 ```bash
-%%bash
 mkdir -p kraken2_output
 
 echo "Executing Taxonomic Classification with Kraken2..."
