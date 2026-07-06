@@ -2,7 +2,7 @@
 *(A BCD Analytics Hub Workshop Project)*
 
 ## 🔬 Project Overview
-This project investigates the capability to diagnose Colorectal Cancer (CRC) non-invasively by analyzing the human gut microbiome. By processing raw stool metagenomes through a rigorous computational pipeline (Dry Lab), we successfully profiled bacterial communities and deployed Machine Learning algorithms to discover distinct microbial biomarkers that quantitatively discriminate between healthy controls and CRC patients.
+This project investigates the capability to diagnose Colorectal Cancer (CRC) non-invasively by analyzing the human gut microbiome. By processing raw stool metagenomes through a rigorous computational pipeline (Dry Lab), I successfully profiled bacterial communities and deployed Machine Learning algorithms to discover distinct microbial biomarkers that quantitatively discriminate between healthy controls and CRC patients.
 
 ## 🎯 Key Objectives
 *   **Establish a Dry Lab Pipeline:** Bridge the gap between physical DNA sequencing and computational analysis by configuring a robust Linux bioinformatics environment.
@@ -12,7 +12,7 @@ This project investigates the capability to diagnose Colorectal Cancer (CRC) non
 
 ## 🛠️ Technologies & Tools Used
 **Environment Setup:**
-*   Windows Subsystem for Linux (WSL) - Ubuntu
+*   macOS Terminal (Native Unix Environment)
 *   Anaconda / Miniconda (Environment Management)
 *   Google Colab / Jupyter Notebooks
 

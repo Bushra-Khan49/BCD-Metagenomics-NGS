@@ -7,10 +7,10 @@ This document is structured exactly like a Jupyter Notebook. In a real Jupyter e
 
 ### Part 1: Initial Preparations
 **Step 0: Prerequisites and Environment Setup**
-*   **Required Setup:** Windows Subsystem for Linux (WSL) with Ubuntu, Anaconda/Miniconda, minimum 8GB RAM, and a stable internet connection.
+*   **Required Setup:** macOS Terminal (Native Unix Environment), Anaconda/Miniconda, minimum 8GB RAM, and a stable internet connection.
 *   **Required Input Files:** None.
-*   **Generated Output Files:** A fully configured Linux environment ready for bioinformatics.
-*   **My Guide / Instructions:** "Before I started anything, I made sure my laptop had at least 8GB of RAM and a good internet connection. I installed WSL with Ubuntu so I could run all the heavy Linux commands right on my Windows computer. Then, I installed Anaconda to manage my environments. I installed all the tools I'd need (like SRA Toolkit, fastp, Bowtie2, and Kraken2) using Conda. For the machine learning later, I installed Python packages like pandas and scikit-learn. Finally, I pre-downloaded the massive database files for Bowtie2 (GRCh38 human genome) and Kraken2 (MGnify human-gut database)."
+*   **Generated Output Files:** A fully configured Unix environment ready for bioinformatics.
+*   **My Guide / Instructions:** "Before I started anything, I made sure my Mac had at least 8GB of RAM and a good internet connection. Since my laptop is a Mac, I was able to run all the heavy bioinformatics commands natively right in my macOS Terminal. I installed Anaconda to manage my environments, and installed all the tools I'd need (like SRA Toolkit, fastp, Bowtie2, and Kraken2) using Conda. For the machine learning later, I installed Python packages like pandas and scikit-learn. Finally, I pre-downloaded the massive database files for Bowtie2 (GRCh38 human genome) and Kraken2 (MGnify human-gut database)."
 
 ---
 
@@ -140,7 +140,7 @@ bowtie2 \
 *   **Required Setup:** Linux Terminal with `kraken2` installed, extremely high RAM (or HPC).
 *   **Required Input Files:** `ERR14218891_nonhuman.fastq.1.gz`, `ERR14218891_nonhuman.fastq.2.gz`, and the MGnify `human-gut` database.
 *   **Generated Output Files:** `ERR14218891.k2report`, `ERR14218891_classified.fastq`, `ERR14218891.kraken2.out`.
-*   **My Guide / Instructions:** "Now that I had pure microbial DNA, I needed to identify exactly what bacteria were in it. I used `Kraken2` and pointed it to the highly specific MGnify human-gut database. This tool chopped my reads into smaller 'k-mers' and matched them to known bacteria, giving me a final report of what species were present. I had to be careful here because if the database was too big, Linux would kill the process for running out of RAM."
+*   **My Guide / Instructions:** "Now that I had pure microbial DNA, I needed to identify exactly what bacteria were in it. I used `Kraken2` and pointed it to the highly specific MGnify human-gut database. This tool chopped my reads into smaller 'k-mers' and matched them to known bacteria, giving me a final report of what species were present. Because I had enough storage and RAM on my Mac, I was able to download the database and process this intensive classification completely locally. (For systems lacking space, downloading pre-computed cloud profiles from Zenodo is another option, but I processed Kraken2 as my main method)."
 
 ```bash
 %%bash
@@ -167,7 +167,7 @@ kraken2 \
 *   **Required Setup:** Python Environment with `pandas` and `numpy`.
 *   **Required Input Files:** `species_abundance_matrix.csv` (Compiled from Kraken2/MetaPhlAn), `merged_file.xlsx` (From Step 1).
 *   **Generated Output Files:** Cleaned `X` (Features) and `y` (Target) variables stored in memory.
-*   **My Guide / Instructions:** "With my taxonomic profiling done, it was time for Machine Learning. Assuming the Kraken2 results were compiled into a single table for all patients, I loaded this table (my Features) and the clinical metadata (my Target) into Python. I aligned them to make sure the patients matched perfectly, dropped any rows missing a clinical diagnosis, and changed the text diagnoses into binary numbers (Cancer = 1, Healthy = 0)."
+*   **My Guide / Instructions:** "With my taxonomic profiling done, it was time for Machine Learning. Once my local Kraken2 results were compiled into a single table for all patients, I loaded this table (my Features) and the clinical metadata (my Target) into Python. I aligned them to make sure the patients matched perfectly, dropped any rows missing a clinical diagnosis, and changed the text diagnoses into binary numbers (Cancer = 1, Healthy = 0)."
 
 ```python
 import pandas as pd
