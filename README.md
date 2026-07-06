@@ -48,7 +48,7 @@ This project follows a strict 9-step end-to-end pipeline. You can click on any s
 ## ▪️ Workshop Certification
 I successfully completed the comprehensive BCD Analytics Hub Workshop that culminated in this project.
 
-![BCD Analytics Workshop Certificate](04_Metagenomics_Microbiome_Analysis.png)
+![BCD Analytics Workshop Certificate](Certification.png)
 
 ## 🔻 How to Replicate
 The complete, executable code for this project (including both Bash terminal commands and Python scripts) is thoroughly documented step-by-step. Please refer to the [BCD_NGS_Pipeline.md](BCD_NGS_Pipeline.md) file (or corresponding `.ipynb` Notebook) in this repository for explicit instructions, required input files, and expected outputs for every step.
