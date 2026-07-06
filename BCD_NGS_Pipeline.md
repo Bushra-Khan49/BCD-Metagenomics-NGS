@@ -130,7 +130,7 @@ bowtie2 \
   -1 fastp_output/ERR14218891_trimmed_R1.fastq.gz \
   -2 fastp_output/ERR14218891_trimmed_R2.fastq.gz \
   --un-conc-gz bowtie2_output/ERR14218891_nonhuman.fastq.gz \
-  -S /dev/null -p 16
+  -S /dev/null -p 8
 ```
 
 ---
@@ -148,10 +148,10 @@ mkdir -p kraken2_output
 
 echo "Executing Taxonomic Classification with Kraken2..."
 # --db points to the specific MGnify human-gut database
-# --threads 32 allocates maximum CPU power
+# --threads 8 allocates maximum CPU power for macOS
 kraken2 \
   --db kraken_database \
-  --threads 32 \
+  --threads 8 \
   --report kraken2_output/ERR14218891.k2report \
   --classified-out kraken2_output/ERR14218891_classified.fastq \
   --unclassified-out kraken2_output/ERR14218891_unclassified.fastq \
