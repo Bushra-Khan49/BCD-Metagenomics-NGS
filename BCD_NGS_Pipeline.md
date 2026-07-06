@@ -130,7 +130,7 @@ bowtie2 \
   -1 fastp_output/ERR14218891_trimmed_R1.fastq.gz \
   -2 fastp_output/ERR14218891_trimmed_R2.fastq.gz \
   --un-conc-gz bowtie2_output/ERR14218891_nonhuman.fastq.gz \
-  -S /dev/null -p 8
+  -S /dev/null -p 16
 ```
 
 ---
