@@ -46,4 +46,4 @@ This project follows a strict 9-step end-to-end pipeline:
 *   **Personal Takeaway:** This project proved that a highly accurate CRC prediction model is entirely dependent on the successful, manual execution of upstream dry-lab tasks. From configuring Linux environments to managing massive storage constraints and outputs, this pipeline demonstrates true, hands-on mastery of computational metagenomics without reliance on automated AI "black boxes".
 
 ## 🚀 How to Replicate
-The complete, executable code for this project (including both Bash terminal commands and Python scripts) is thoroughly documented step-by-step. Please refer to the `BCD_Metagenomics_Pipeline.md` file (or corresponding `.ipynb` Notebook) in this repository for explicit instructions, required input files, and expected outputs for every step.
+The complete, executable code for this project (including both Bash terminal commands and Python scripts) is thoroughly documented step-by-step. Please refer to the `BCD_NGS_Pipeline.md` file (or corresponding `.ipynb` Notebook) in this repository for explicit instructions, required input files, and expected outputs for every step.
