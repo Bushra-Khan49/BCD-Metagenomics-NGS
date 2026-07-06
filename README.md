@@ -43,7 +43,7 @@ This project follows a strict 9-step end-to-end pipeline. You can click on any s
 ## 🟣 Results & Conclusion
 *   **Model Performance:** The Random Forest classifier successfully differentiated between healthy and cancerous samples, evaluated via a robust AUC-ROC score (mitigating the bias of imbalanced medical datasets).
 *   **Biomarker Discovery:** The model successfully identified key taxa (e.g., *Fusobacterium nucleatum*) as primary drivers for CRC classification.
-*   **Personal Takeaway:** This project proved that a highly accurate CRC prediction model is entirely dependent on the successful, manual execution of upstream dry-lab tasks. From configuring Unix environments to managing massive storage constraints and outputs, this pipeline demonstrates true, hands-on mastery of computational metagenomics without reliance on automated AI "black boxes".
+*   **Personal Takeaway:** This project proved that a highly accurate CRC prediction model is entirely dependent on the successful, manual execution of upstream dry-lab tasks. From configuring Unix environments to managing massive storage constraints and outputs, this pipeline demonstrates true, hands-on mastery of computational metagenomics and end-to-end bioinformatics analysis.
 
 ## 🔻 How to Replicate
 The complete, executable code for this project (including both Bash terminal commands and Python scripts) is thoroughly documented step-by-step. Please refer to the [BCD_NGS_Pipeline.md](BCD_NGS_Pipeline.md) file (or corresponding `.ipynb` Notebook) in this repository for explicit instructions, required input files, and expected outputs for every step.
