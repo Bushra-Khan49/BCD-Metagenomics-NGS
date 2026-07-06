@@ -3,9 +3,8 @@
 # ==========================================
 # We explicitly ignore these files to prevent massive repository bloat and avoid 
 # hitting GitHub's strict file size limits (100MB per file). 
-# Raw genomic data (.sra, .fastq.gz) and alignment/taxonomic databases (Bowtie2, Kraken2) 
-# are multi-gigabyte files that are meant to be downloaded and generated dynamically 
-# during the pipeline's execution, not stored in version control.
+# Raw genomic data (.sra, .fastq.gz) and alignment/taxonomic databases (Bowtie2, Kraken2) are multi-gigabyte files that are meant to be downloaded and generated dynamically during the pipeline's execution, not stored in version control.
+
 *.sra
 *.fastq
 *.fastq.gz
