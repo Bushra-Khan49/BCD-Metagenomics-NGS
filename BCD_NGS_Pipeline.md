@@ -16,7 +16,7 @@ Before I started anything, I had to ensure my hardware and software were properl
 ### 🟢 Part 2: Metadata Management
 **Step 1 (Python): Preparing the Workspace & Merging Metadata**
 *   **Required Setup:** Python Environment (Jupyter Notebook or Google Colab) with `pandas` installed.
-*   **Required Input Files:** `META_file_gyatri.xlsx` (clinical data), `SraRunTable_gyatriiiii.xlsx` (sequencing IDs).
+*   **Required Input Files:** `META_file_bushra.xlsx` (clinical data), `SraRunTable_bushra.xlsx` (sequencing IDs).
 *   **Generated Output Files:** `merged_file.xlsx`
 
 In Machine Learning, raw data is useless without context. First, I had to link the clinical patient data (which tells me if a patient is healthy or has Colorectal Cancer) with the actual sequencing run IDs (the unique codes pointing to their specific DNA samples on the internet). Without this critical step, I wouldn't know which DNA sequence belonged to a healthy person or a cancer patient, making prediction impossible. I wrote a Python script utilizing the Pandas library to seamlessly merge these two Excel sheets together. By matching them perfectly on their shared 'Sample Name' column, I created a unified 'source of truth' document. I then saved this final merged list as `merged_file.xlsx` so I could reference it throughout the rest of the project.
@@ -27,11 +27,11 @@ import pandas as pd
 
 # Load the clinical metadata (containing Diagnosis, CRC Stage, Sex, etc.)
 print("Loading Metadata...")
-df1 = pd.read_excel("META_file_gyatri.xlsx", sheet_name=0) 
+df1 = pd.read_excel("META_file_bushra.xlsx", sheet_name=0) 
 
 # Load the SRA Run Table (containing the ERR/SRR sequencing IDs)
 print("Loading SRA Run Table...")
-df2 = pd.read_excel("SraRunTable_gyatriiiii.xlsx", sheet_name=0)
+df2 = pd.read_excel("SraRunTable_bushra.xlsx", sheet_name=0)
 
 # Merge the two datasets on the shared 'Sample Name' column
 print("Merging Datasets...")
