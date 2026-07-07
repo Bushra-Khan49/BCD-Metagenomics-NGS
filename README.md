@@ -45,17 +45,6 @@ This project follows a strict 9-step end-to-end pipeline. You can click on any s
 *   **Biomarker Discovery:** The model successfully identified key taxa (e.g., *Fusobacterium nucleatum*) as primary drivers for CRC classification.
 *   **Personal Takeaway:** This project proved that a highly accurate CRC prediction model is entirely dependent on the successful, manual execution of upstream dry-lab tasks. From configuring Unix environments to managing massive storage constraints and outputs, this pipeline demonstrates true, hands-on mastery of computational metagenomics and end-to-end bioinformatics analysis.
 
-## 🌐 Other Repositories in My Portfolio
-
-*   **Colorectal Cancer Metagenomics Pipeline (This Repository)**  
-    A complete dry-lab bioinformatics pipeline processing raw stool metagenomes through host decontamination and taxonomic profiling to predict CRC using Machine Learning.
-
-*   **Herbal Omics Lab**  
-    A computational biology and cheminformatics repository focused on the analysis of botanical compounds, exploring therapeutic targets and multi-omics data integration for herbal medicine discovery.
-
-*   **My Portfolio Website**  
-    My personal digital portfolio and professional bio, showcasing my technical projects, bioinformatics expertise, and front-end development capabilities using modern web design principles.
-
 ## ▪️ Workshop Certification
 I successfully completed the comprehensive BCD Analytics Hub Workshop that culminated in this project.
 
