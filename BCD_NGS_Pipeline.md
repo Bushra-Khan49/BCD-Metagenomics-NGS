@@ -5,17 +5,17 @@
 
 ### 🔸 Part 1: Initial Preparations
 **Step 0: Prerequisites and Environment Setup**
-*   **Required Setup:** macOS Terminal (Native Unix Environment), Anaconda/Miniconda, minimum 8GB RAM, and a stable internet connection.
+*   **Required Setup:** macOS Terminal (Native Unix Environment), minimum 8GB RAM, and a stable internet connection.
 *   **Required Input Files:** None.
 *   **Generated Output Files:** A fully configured Unix environment ready for bioinformatics.
 
-Before I started anything, I had to ensure my hardware and software were properly prepared for heavy bioinformatics processing. I made sure my Mac had at least 8GB of RAM and a stable internet connection because the databases I needed to download were massive. Since my laptop is a Mac, I was able to bypass complex virtual machines and run all the heavy bioinformatics commands natively right in my macOS Terminal. I then installed Anaconda, a powerful environment manager, to create isolated workspaces. This ensures that installing one tool doesn't accidentally break another. Inside this isolated environment, I installed all the necessary bioinformatics tools (SRA Toolkit for downloading data, fastp for quality control, Bowtie2 for decontamination, and Kraken2 for taxonomic profiling) using the `conda` command. For the Machine Learning phase, I installed Python packages like `pandas`, `numpy`, and `scikit-learn`. Finally, I pre-downloaded the massive reference database files: the GRCh38 human genome for Bowtie2 (to filter out human DNA) and the highly specific MGnify human-gut database for Kraken2 (to identify bacteria).
+Before I started anything, I had to ensure my hardware and software were properly prepared for heavy bioinformatics processing. I made sure my Mac had at least 8GB of RAM and a stable internet connection because the databases I needed to download were massive. Since my laptop is a Mac, I was able to bypass complex virtual machines and run all the heavy bioinformatics commands natively right in my macOS Terminal. I installed all the necessary bioinformatics tools (SRA Toolkit for downloading data, fastp for quality control, Bowtie2 for decontamination, and Kraken2 for taxonomic profiling) directly in my macOS environment. For the Machine Learning phase, I installed Python packages like `pandas`, `numpy`, and `scikit-learn`. Finally, I pre-downloaded the massive reference database files: the GRCh38 human genome for Bowtie2 (to filter out human DNA) and the highly specific MGnify human-gut database for Kraken2 (to identify bacteria).
 
 ---
 
 ### 🟢 Part 2: Metadata Management
 **Step 1 (Python): Preparing the Workspace & Merging Metadata**
-*   **Required Setup:** Python Environment (Jupyter Notebook or Google Colab) with `pandas` installed.
+*   **Required Setup:** Native macOS Python Environment with `pandas` installed.
 *   **Required Input Files:** `META_file_bushra.xlsx` (clinical data), `SraRunTable_bushra.xlsx` (sequencing IDs).
 *   **Generated Output Files:** `merged_file.xlsx`
 

@@ -13,8 +13,6 @@ This project investigates the capability to diagnose Colorectal Cancer (CRC) non
 ## 🟢 Technologies & Tools Used
 **Environment Setup:**
 *   macOS Terminal (Native Unix Environment)
-*   Anaconda / Miniconda (Environment Management)
-*   Google Colab / Jupyter Notebooks
 
 **Bioinformatics Command-Line Tools:**
 *   **SRA Toolkit:** (`prefetch`, `fastq-dump`) For downloading and extracting raw sequences.
